@@ -3,11 +3,12 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import FirstSvg from '../assets/svg/accelerate-svgrepo-com.svg'
 import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
-// import { transformer } from '../metro.config';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Home, Login } from './Home';
 
-export  function Welcome() {
+export function Welcome({ navigation}) {
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <View style={{ flex: 1, justifyContent: 'space-around', alignItems: 'center', height: 50 }} >
                 <View>
                     <Text style={styles.text}>Welcome</Text>
@@ -15,9 +16,8 @@ export  function Welcome() {
                 <FirstSvg
                     width={200}
                     height={200}
-                    // style= {{transformer:[{rotate: '15deg'}]}}
                 />
-                <TouchableOpacity style={styles.loginOpacity}>
+                <TouchableOpacity style={styles.loginOpacity} onPress={()=> navigation.navigate('Home')}>
                     <Text style={{ fontSize: 18, color: "#ffff", fontWeight: 'bold' }}>click here</Text>
                     <FontAwesomeIcon
                         size={22}
@@ -26,7 +26,7 @@ export  function Welcome() {
                 </TouchableOpacity>
             </View>
             <StatusBar style="auto" />
-        </View>
+        </SafeAreaView>
     );
 }
 
