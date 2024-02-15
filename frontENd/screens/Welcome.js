@@ -3,7 +3,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import FirstSvg from '../assets/svg/accelerate-svgrepo-com.svg'
 import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
-import { transformer } from '../metro.config';
+// import { transformer } from '../metro.config';
 
 export  function Welcome() {
     return (
